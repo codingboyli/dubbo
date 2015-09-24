@@ -21,5 +21,5 @@
 	http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
 
 	<dubbo:reference id="demoService" interface="com.alibaba.dubbo.demo.DemoService" />
-	<dubbo:monitor protocol="dubbo://172.16.60.152:7777"></dubbo:monitor>
+	<dubbo:monitor protocol="registry"/>
 </beans>
