@@ -36,7 +36,7 @@ public class DemoAction {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-            Thread.sleep(1);
+            Thread.sleep(1000);
         }
 	}
 
