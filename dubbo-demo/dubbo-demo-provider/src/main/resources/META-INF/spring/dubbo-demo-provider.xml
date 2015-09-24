@@ -24,4 +24,6 @@
 	
 	<dubbo:service interface="com.alibaba.dubbo.demo.DemoService" ref="demoService" />
 	
+	<dubbo:monitor protocol="dubbo://172.16.60.152:7777"></dubbo:monitor>
+	
 </beans>
