@@ -1,2 +1,3 @@
 servlet=com.alibaba.dubbo.remoting.http.servlet.ServletHttpBinder
 jetty=com.alibaba.dubbo.remoting.http.jetty.JettyHttpBinder
+webserviceservlet=com.alibaba.dubbo.remoting.http.servlet.WebServiceServletHttpBinder
