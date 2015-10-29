@@ -26,4 +26,4 @@ target/
 Thumbs.db
 
 *.classpath
-*..project
+*.project
