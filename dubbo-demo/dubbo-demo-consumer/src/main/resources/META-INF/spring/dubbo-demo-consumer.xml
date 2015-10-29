@@ -19,7 +19,8 @@
 	xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
 	http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
-
-	<dubbo:reference id="demoService" interface="com.alibaba.dubbo.demo.DemoService" />
+	
+	<dubbo:registry address="zookeeper://172.16.60.151:2181?backup=172.16.60.152:2181,172.16.60.153:2181"></dubbo:registry>
+	<dubbo:reference id="demoService" interface="com.alibaba.dubbo.demo.DemoService"/>
 	<dubbo:monitor protocol="registry"/>
 </beans>

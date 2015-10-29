@@ -452,7 +452,9 @@ public class ServiceConfig<T> extends AbstractServiceConfig {
             contextPath = provider.getContextpath();
         }
         
-        map.put("contextpath", contextPath);
+        if(contextPath!=null&&contextPath.length()>0){
+        	map.put("contextpath", contextPath);
+        }
         
         URL url = new URL(name, host, port, (contextPath == null || contextPath.length() == 0 ? "" : contextPath + "/") + path, map);
 
