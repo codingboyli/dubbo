@@ -22,7 +22,10 @@
 	
 	<bean id="demoService" class="com.alibaba.dubbo.demo.provider.DemoServiceImpl" />
 	
-	<dubbo:service interface="com.alibaba.dubbo.demo.DemoService" ref="demoService" />
+	<dubbo:service interface="com.alibaba.dubbo.demo.DemoService" ref="demoService" >
+		<dubbo:parameter key="ipfilter" value="true"/>
+		<dubbo:parameter key="whitelist" value="172.1.0.1,172.16.9.101"/>
+	</dubbo:service>
 	
 	<dubbo:monitor protocol="registry"/>
 	
