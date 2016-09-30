@@ -32,7 +32,7 @@ import com.alibaba.dubbo.rpc.RpcResult;
  * 白名单过滤
  *
  */
-@Activate(group = Constants.PROVIDER, value = "ipfilter")
+@Activate(group = Constants.PROVIDER)
 public class IPWhiteListFilter implements Filter {
 	private static final Logger LOGGER = LoggerFactory
 			.getLogger(IPWhiteListFilter.class);
@@ -42,12 +42,10 @@ public class IPWhiteListFilter implements Filter {
 		String ipfilter = invoker.getUrl().getParameter("ipfilter","false");
 		if (!"true".equals(ipfilter)) {
 			LOGGER.debug("白名单禁用");  
-			System.out.println("白名单禁用");
 			return invoker.invoke(invocation);
 		}
 		String clientIp = RpcContext.getContext().getRemoteHost();  
 		LOGGER.debug("访问ip为"+clientIp);
-		
 		String ips = invoker.getUrl().getParameter("whitelist","");
 		if(ips.contains(clientIp)){
 			return invoker.invoke(invocation);
